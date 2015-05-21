@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>Big Picture Demo</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="lib/contour.css">
+        <link rel="stylesheet" href="lib/demo.css">
+    </head>
+    <body>
+
+        <div id="wrapper">
+            <div class="chart scatter-export"></div>
+            <input type=range min=0 max=1000 value=0 step=1 id="timer">
+            <button id="play">Play</button>
+        </div>
+
+        <footer>
+
+        </footer>
+        <script src="http://code.jquery.com/jquery-2.1.3.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/jquery-cookie/1.4.1/jquery.cookie.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/lodash.js/2.4.1/lodash.min.js"></script>
+        <script src="http://cdnjs.cloudflare.com/ajax/libs/d3/3.3.13/d3.min.js" charset="utf-8"></script>
+        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
+        <script src="http://backbonejs.org/backbone-min.js"></script>
+        <script src="http://forio.com/tools/contour/0.9.115/contour.js"></script>
+        <script src="model/timeSeriesModel.js"></script>
+        <script src="view/demoView.js"></script>
+        <script src="router/router.js"></script>
+        <script src="app.js"></script>
+    </body>
+</html>
