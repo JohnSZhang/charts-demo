@@ -60,6 +60,16 @@ window.DemoView = Backbone.View.extend({
     renderChart: function (data) {
         this.chart.setData(data);
         this.chart.render();
+        var xData = _.map(data, function (pt) {
+            return pt.x;
+        });
+        this.xchart.setData(xData);
+        this.xchart.render();
+        var yData = _.map(data, function (pt) {
+            return pt.y;
+        });
+        this.ychart.setData(yData);
+        this.ychart.render();
     },
 
     initChart: function () {
@@ -86,6 +96,50 @@ window.DemoView = Backbone.View.extend({
             })
             .cartesian()
             .scatter()
+            .tooltip();
+
+        this.xchart = new Contour({
+                el: '.bar-graph-x',
+                xAxis: {
+                    title: 'Value',
+                    min: 0,
+                    max: 200
+                },
+                yAxis: {
+                    title: 'Value',
+                    min: 0,
+                    max: 200
+                },
+                chart: {
+                    height: 200,
+                    width: 400
+                }
+            })
+            .cartesian()
+            .horizontal()
+            .bar()
+            .tooltip();
+
+        this.ychart = new Contour({
+                el: '.bar-graph-y',
+                xAxis: {
+                    title: 'Value',
+                    min: 0,
+                    max: 200
+                },
+                yAxis: {
+                    title: 'Value',
+                    min: 0,
+                    max: 200
+                },
+                chart: {
+                    height: 200,
+                    width: 400
+                }
+            })
+            .cartesian()
+            .horizontal()
+            .bar()
             .tooltip();
     }
 });

@@ -5,13 +5,6 @@ window.TimeSeriesModel = Backbone.Model.extend({
         this.set('series', series);
     },
 
-    createDataPoint: function () {
-        return { x: Math.random() * 200,
-            y: Math.random() * 200,
-            z: Math.random() * 20
-        };
-    },
-
     updateIds: function (series) {
         _.each(series, function (step) {
             var count = 0;
@@ -31,6 +24,13 @@ window.TimeSeriesModel = Backbone.Model.extend({
         });
     },
 
+    createDataPoint: function () {
+        return { x: Math.random() * 200,
+            y: Math.random() * 200,
+            z: Math.random() * 20 + 10
+        };
+    },
+
     createGroup: function (num) {
         num = num || 10;
         var group = [];
@@ -44,7 +44,7 @@ window.TimeSeriesModel = Backbone.Model.extend({
         groupNum = groupNum || 3;
         var groups = [];
         for (var i=0; i<groupNum; i++) {
-            groups.push(this.createGroup(3));
+            groups.push(this.createDataPoint(7));
         }
         return groups;
     },
