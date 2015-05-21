@@ -21,6 +21,11 @@
                 <button id="play">Play</button>
             </div>
             <div class="right">
+                <select name="bar-one-select" id="bar-one-select">
+                    <option value="x" selected>X Value</option>
+                    <option value="y">Y Value</option>
+                    <option value="z">Z Value</option>
+                </select>
                 <div class="chart bar-graph-x"></div>
                 <div class="chart bar-graph-y"></div>
             </div>
@@ -37,7 +42,9 @@
         <script src="http://backbonejs.org/backbone-min.js"></script>
         <script src="http://forio.com/tools/contour/0.9.115/contour.js"></script>
         <script src="model/timeSeriesModel.js"></script>
-        <script src="view/demoView.js"></script>
+        <script src="view/ChartContainerView.js"></script>
+        <script src="view/BubbleChartView.js"></script>
+        <script src="view/BarChartView.js"></script>
         <script src="router/router.js"></script>
         <script src="app.js"></script>
     </body>
