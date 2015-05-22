@@ -1,19 +1,33 @@
 window.BackboneRouter = Backbone.Router.extend({
     routes: {
-        '' : 'main'
+        'bubble' : 'bubble',
+        'pie' : 'pie'
     },
 
-    main: function () {
+    bubble: function () {
         var seriesModel = new TimeSeriesModel();
-        window.view = new window.ChartContainerView({
+        var view = window.view = new window.ChartContainerView({
             model: seriesModel,
-            el: '#wrapper'
+            el: '#wrapper',
         });
+        view.template = window.templates.bubbles;
         var bubbleChartView = new BubbleChartView();
         var barChartViewOne = window.barChartView = new BarChartView();
         barChartViewOne.setFilterAttribute('x');
+        view.render();
         view.addChartView(bubbleChartView);
         view.addChartView(barChartViewOne);
+    },
+    pie: function () {
+        var seriesModel = new CompetitorModel();
+        var view = window.view = new window.ChartContainerView({
+            model: seriesModel,
+            el: '#wrapper',
+        });
+        view.template = window.templates.pie;
         view.render();
+        var pieChartView  = new PieChartView();
+        view.addChartView(pieChartView);
+        view.updateCharts();
     }
 });

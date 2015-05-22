@@ -15,20 +15,6 @@
     <body>
 
         <div id="wrapper">
-            <div class="left">
-                <div class="chart scatter-export"></div>
-                <input type=range min=0 max=1000 value=0 step=1 id="timer">
-                <button id="play">Play</button>
-            </div>
-            <div class="right">
-                <select name="bar-one-select" id="bar-one-select">
-                    <option value="x" selected>X Value</option>
-                    <option value="y">Y Value</option>
-                    <option value="z">Z Value</option>
-                </select>
-                <div class="chart bar-graph-x"></div>
-                <div class="chart bar-graph-y"></div>
-            </div>
         </div>
 
         <footer>
@@ -41,10 +27,15 @@
         <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.3.1/js/bootstrap.min.js"></script>
         <script src="http://backbonejs.org/backbone-min.js"></script>
         <script src="http://forio.com/tools/contour/0.9.115/contour.js"></script>
-        <script src="model/timeSeriesModel.js"></script>
-        <script src="view/ChartContainerView.js"></script>
-        <script src="view/BubbleChartView.js"></script>
-        <script src="view/BarChartView.js"></script>
+        <script src="template/bubble.js"></script>
+        <script src="template/pie.js"></script>
+        <script src="model/time-series-model.js"></script>
+        <script src="model/competitor-model.js"></script>
+        <script src="view/chart-container-view.js"></script>
+        <script src="view/bubble-chart-view.js"></script>
+        <script src="view/bar-chart-view.js"></script>
+        <script src="view/pie-chart-view.js"></script>
+        <script src="view/stacked-bar-chart-view.js"></script>
         <script src="router/router.js"></script>
         <script src="app.js"></script>
     </body>

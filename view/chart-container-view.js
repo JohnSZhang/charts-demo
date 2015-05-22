@@ -20,6 +20,7 @@ window.ChartContainerView = Backbone.View.extend({
     },
 
     render: function () {
+        this.el.innerHTML = this.template;
         _.each(this.subviews, function (view) {
             view.render();
         });
@@ -56,7 +57,11 @@ window.ChartContainerView = Backbone.View.extend({
     },
 
     getTimerValue: function () {
-        return parseInt(this.$('#timer')[0].value);
+        if (this.$('#timer').length ) {
+            return parseInt(this.$('#timer')[0].value);
+        } else {
+            return 0;
+        }
     },
 
     getStep: function () {

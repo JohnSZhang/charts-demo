@@ -2,7 +2,7 @@ window.TimeSeriesModel = Backbone.Model.extend({
     initialize: function () {
         var series = this.createSeries(10);
         this.updateIds(series);
-        this.set('series', series);
+        this.set('data', series);
     },
 
     updateIds: function (series) {
@@ -58,10 +58,10 @@ window.TimeSeriesModel = Backbone.Model.extend({
     },
 
     getStepData: function (stepNum) {
-        return this.get('series')[stepNum];
+        return this.get('data')[stepNum];
     },
 
     getLastStep: function () {
-        return this.get('series').length - 1;
+        return this.get('data').length - 1;
     }
 });
