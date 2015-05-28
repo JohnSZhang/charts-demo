@@ -1,6 +1,7 @@
 window.BackboneRouter = Backbone.Router.extend({
     routes: {
-        '' : 'main'
+        '' : 'main',
+        'pie': 'pie'
     },
 
     main: function () {
@@ -14,6 +15,17 @@ window.BackboneRouter = Backbone.Router.extend({
         barChartViewOne.setFilterAttribute('x');
         view.addChartView(bubbleChartView);
         view.addChartView(barChartViewOne);
+        view.render();
+    },
+
+    pie: function () {
+        var pieModel = new PieModel();
+        window.view = new window.ChartContainerView({
+            model: pieModel,
+            el: '#pie-wrapper'
+        });
+        var pieChartView = new PieChartView();
+        view.addChartView(pieChartView);
         view.render();
     }
 });
