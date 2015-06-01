@@ -28,19 +28,24 @@
                 </select>
                 <div class="chart bar-graph-x"></div>
                 <div class="chart bar-graph-y"></div>
-            <div id="pie-inputs">
-                <input class="pie-input" data-index="0" type="number" value="0">
-                <input class="pie-input" data-index="1" type="number" value="0">
-                <input class="pie-input" data-index="2" type="number" value="0">
-                <input class="pie-input" data-index="3" type="number" value="0">
             </div>
-            <div class="left" id="pie">
+            <div class="left">
+                <div id="pie-inputs">
+                    <input class="pie-input" data-index="0" type="number" value="0">
+                    <input class="pie-input" data-index="1" type="number" value="0">
+                    <input class="pie-input" data-index="2" type="number" value="0">
+                    <input class="pie-input" data-index="3" type="number" value="0">
+                </div>
+                <div class="left" id="pie">
 
-            </div>
-            <div class="left" id="stack-bar">
+                </div>
+                <input type="number" id="stack-additional">
+                <div class="left" id="stack-bar">
 
+                </div>
             </div>
         </div>
+
         <footer>
 
         </footer>
@@ -54,6 +59,7 @@
         <script src="model/timeSeriesModel.js"></script>
         <script src="model/PieModel.js"></script>
         <script src="view/PieChartView.js"></script>
+        <script src="view/StackBarChartView.js"></script>
         <script src="view/ChartContainerView.js"></script>
         <script src="view/BubbleChartView.js"></script>
         <script src="view/BarChartView.js"></script>

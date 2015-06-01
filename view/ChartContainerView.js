@@ -11,6 +11,7 @@ window.ChartContainerView = Backbone.View.extend({
         'click #play': 'playModel',
         'change #bar-one-select': 'updateBarOne',
         'input #pie-inputs': 'updatePieChartValues',
+        'input #stack-additional': 'updateStackBarAdditional',
     },
 
     addChartView: function (view) {
@@ -94,5 +95,12 @@ window.ChartContainerView = Backbone.View.extend({
             view.model.setData(idx, parseInt(el.value));
         });
         this.updateCharts();
-    }
+    },
+
+    updateStackBarAdditional: function () {
+        var value = parseInt(this.$('#stack-additional').value);
+        this.model.setAdditionalSection(value);
+        var allData = this.getAllData();
+        this.renderStackedChart(allData);
+    },
 });

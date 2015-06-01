@@ -16,6 +16,14 @@ window.PieModel = Backbone.Model.extend({
         return pie;
     },
 
+    setAdditionalSection: function (value) {
+        this.set('additionalValue', value);
+    },
+
+    getAllData: function () {
+        return this.get('data').concat(this.get('additionalValue'));
+    },
+
     setData: function (index, value) {
         var pie = this.get('data');
         pie[index] = value;

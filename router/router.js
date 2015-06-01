@@ -24,10 +24,10 @@ window.BackboneRouter = Backbone.Router.extend({
             model: pieModel,
             el: '#wrapper'
         });
-        var pieChartView = new PieChartView({
-            el: '#wrapper'
-        });
+        var pieChartView = new PieChartView();
+        var stackBarChartView = new StackBarChartView();
         view.addChartView(pieChartView);
+        view.addChartView(stackBarChartView);
         view.render();
     }
 });
