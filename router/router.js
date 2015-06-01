@@ -22,9 +22,11 @@ window.BackboneRouter = Backbone.Router.extend({
         var pieModel = new PieModel();
         window.view = new window.ChartContainerView({
             model: pieModel,
-            el: '#pie-wrapper'
+            el: '#wrapper'
         });
-        var pieChartView = new PieChartView();
+        var pieChartView = new PieChartView({
+            el: '#wrapper'
+        });
         view.addChartView(pieChartView);
         view.render();
     }

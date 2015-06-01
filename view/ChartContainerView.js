@@ -9,7 +9,8 @@ window.ChartContainerView = Backbone.View.extend({
     events: {
         'input #timer': 'updateChart',
         'click #play': 'playModel',
-        'change #bar-one-select': 'updateBarOne'
+        'change #bar-one-select': 'updateBarOne',
+        'input #pie-inputs': 'updatePieChartValues',
     },
 
     addChartView: function (view) {
@@ -85,5 +86,13 @@ window.ChartContainerView = Backbone.View.extend({
         window.barChartView.setFilterAttribute(attributeToFilter);
         var data = this.getCurrentStepData();
         window.barChartView.renderChart(data);
+    },
+
+    updatePieChartValues: function () {
+        var view = this;
+        _.each(this.$('.pie-input'), function (el, idx) {
+            view.model.setData(idx, parseInt(el.value));
+        });
+        this.updateCharts();
     }
 });
